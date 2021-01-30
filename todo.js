@@ -22,6 +22,7 @@ let all = document.querySelector("#all");
 let active = document.querySelector("#active");
 let completed = document.querySelector("#completed");
 let clearCompleted = document.querySelector("#clearCompleted");
+let anio = document.querySelector("#anio");
 
 // Themes
 darkMode.addEventListener("click", () => {
@@ -272,3 +273,8 @@ Sortable.create(contentTodo, {
     },
   },
 });
+
+// year
+let fecha = new Date();
+let anho = fecha.getFullYear();
+anio.innerHTML = anho;
