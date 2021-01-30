@@ -1,0 +1,86 @@
+:root {
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+  --LightGrayishBlue: hsl(233, 11%, 84%);
+  --DarkGrayishBlue: hsl(236, 9%, 61%);
+  --VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+}
+
+body {
+  background-color: var(--VeryLightGrayishBlue);
+}
+
+header {
+  color: var(--VeryLightGray);
+}
+
+/* header */
+
+header {
+  background-image: url(../images/bg-mobile-light.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header div:nth-child(2) {
+  background: var(--VeryLightGray);
+}
+
+header div:nth-child(2) span,
+.todos ul li span {
+  border: 1px solid var(--LightGrayishBlue);
+}
+
+/* todos */
+
+.todos ul {
+  background: var(--VeryLightGray);
+}
+
+.todos ul li {
+  border-bottom: 0.2px solid var(--LightGrayishBlue);
+}
+
+.todos ul li p {
+  color: var(--VeryDarkGrayishBlue);
+}
+
+.infoTodo {
+  color: var(--DarkGrayishBlue);
+}
+
+.infoTodo .itemLeft,
+.infoTodo #clearCompleted {
+  background: var(--VeryLightGray);
+  padding: 1.3rem;
+}
+
+/* menuTodos */
+.menuTodos div {
+  background: var(--VeryLightGray);
+  color: var(--DarkGrayishBlue);
+}
+
+/* footer */
+footer {
+  font-weight: 700;
+  color: var(--DarkGrayishBlue);
+}
+
+/* states */
+p.strikethrough {
+  color: var(--DarkGrayishBlue) !important;
+  border: none !important;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 375px) {
+  header {
+    background-image: url(../images/bg-desktop-light.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

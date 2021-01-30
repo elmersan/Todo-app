@@ -1,0 +1,92 @@
+:root {
+  --VeryDarkBlue: hsl(235, 21%, 11%);
+  --VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+  --LightGrayishBlue: hsl(234, 39%, 85%);
+  --LightGrayishBlueHover: hsl(236, 33%, 92%);
+  --DarkGrayishBlue: hsl(234, 11%, 52%);
+  --VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --VeryDarkGrayishBlueHover: hsl(237, 14%, 26%);
+}
+
+body {
+  background-color: var(--VeryDarkBlue);
+}
+
+header {
+  color: var(--LightGrayishBlueHover);
+}
+
+/* header */
+
+header {
+  background-image: url(../images/bg-mobile-dark.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header div:nth-child(2) {
+  background: var(--VeryDarkDesaturatedBlue);
+}
+
+header div:nth-child(2) input {
+  color: var(--LightGrayishBlueHover);
+}
+
+header div:nth-child(2) span,
+.todos ul li span {
+  border: 1px solid var(--VeryDarkGrayishBlue);
+}
+
+/* todos */
+
+.todos ul {
+  background: var(--VeryDarkDesaturatedBlue);
+}
+
+.todos ul li {
+  border-bottom: 0.2px solid var(--VeryDarkGrayishBlueHover);
+}
+
+.todos ul li p {
+  color: var(--LightGrayishBlue);
+}
+
+.infoTodo {
+  color: var(--VeryDarkGrayishBlue);
+}
+
+.infoTodo .itemLeft,
+.infoTodo #clearCompleted {
+  background: var(--VeryDarkDesaturatedBlue);
+  padding: 1.3rem;
+}
+
+/* menuTodos */
+.menuTodos div {
+  background: var(--VeryDarkDesaturatedBlue);
+  color: var(--VeryDarkGrayishBlue);
+}
+
+/* footer */
+footer {
+  font-weight: 700;
+  color: var(--VeryDarkGrayishBlue);
+}
+
+/* states */
+p.strikethrough {
+  color: var(--VeryDarkGrayishBlue) !important;
+  border: none !important;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 375px) {
+  header {
+    background-image: url(../images/bg-desktop-dark.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

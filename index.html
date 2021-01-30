@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link id="theme" rel="stylesheet" href="./styles/darkMode.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>TODO</h1>
+        <img id="darkMode" src="./images/icon-sun.svg" alt="" />
+      </div>
+      <div>
+        <span></span>
+        <input id="inputTodo" type="text" placeholder="Create a new todo..." />
+      </div>
+    </header>
+    <!-- header -->
+
+    <div class="todos">
+      <ul id="content-todo"></ul>
+
+      <div class="infoTodo">
+        <p class="itemLeft"><span id="itemLeftTodos">0</span> itemes left</p>
+
+        <div class="menuTodos">
+          <div>
+            <p id="all">All</p>
+            <p id="active">Active</p>
+            <p id="completed">Completed</p>
+          </div>
+        </div>
+        <!-- menu Todos -->
+
+        <p id="clearCompleted">Clear Completed</p>
+      </div>
+    </div>
+    <!-- todos -->
+
+    <!-- desktop -->
+
+    <footer>
+      <p>Drag and drop to reorder list</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="./todo.js"></script>
+  </body>
+</html>
