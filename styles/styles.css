@@ -221,7 +221,7 @@ span.active::before {
 }
 
 #content-todo li.drag {
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 #all,
