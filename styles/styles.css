@@ -211,8 +211,8 @@ span.active::before {
 }
 
 /* active filter */
-.activeFilter {
-  color: var(--BrightBlue);
+p.activeFilter {
+  color: var(--BrightBlue) !important;
 }
 
 /* sortable */
@@ -229,6 +229,7 @@ span.active::before {
 #active,
 #clearCompleted {
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 /* media queries */

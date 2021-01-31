@@ -68,6 +68,14 @@ header div:nth-child(2) span,
   color: var(--VeryDarkGrayishBlue);
 }
 
+#all:hover,
+#completed:hover,
+#active:hover,
+#clearCompleted:hover {
+  color: var(--LightGrayishBlueHover);
+  transition: all 0.3s ease;
+}
+
 /* footer */
 footer {
   font-weight: 700;

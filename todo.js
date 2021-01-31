@@ -14,7 +14,7 @@ let localStorageName = "data";
 
 // variables
 let theme = document.querySelector("#theme");
-let darkMode = document.querySelector("#darkMode");
+let iconTheme = document.querySelector("#iconTheme");
 let inputTodo = document.querySelector("#inputTodo");
 let contentTodo = document.getElementById("content-todo");
 let itemLeftTodos = document.getElementById("itemLeftTodos");
@@ -25,19 +25,40 @@ let clearCompleted = document.querySelector("#clearCompleted");
 let anio = document.querySelector("#anio");
 
 // Themes
-darkMode.addEventListener("click", () => {
-  let lightMode = document.querySelector("#lightMode");
-
-  if (!lightMode) {
-    darkMode.setAttribute("src", "./images/icon-moon.svg");
+iconTheme.addEventListener("click", function () {
+  if (
+    window.localStorage.getItem("src") !== null &&
+    window.localStorage.getItem("src") === "./images/icon-sun.svg"
+  ) {
+    this.setAttribute("src", "./images/icon-moon.svg");
     theme.setAttribute("href", "./styles/lightMode.css");
-    darkMode.setAttribute("id", "lightMode");
+
+    // local storage theme and icon
+    window.localStorage.setItem("href", "./styles/lightMode.css");
+    window.localStorage.setItem("src", "./images/icon-moon.svg");
+    getThemeAndIcon();
   } else {
-    lightMode.setAttribute("id", "darkMode");
-    lightMode.setAttribute("src", "./images/icon-sun.svg");
+    this.setAttribute("src", "./images/icon-sun.svg");
     theme.setAttribute("href", "./styles/darkMode.css");
+
+    // local storage theme and icon
+    window.localStorage.setItem("href", "./styles/darkMode.css");
+    window.localStorage.setItem("src", "./images/icon-sun.svg");
+    getThemeAndIcon();
   }
 });
+
+function getThemeAndIcon() {
+  if (window.localStorage.getItem("href") !== null) {
+    theme.setAttribute("href", localStorage.getItem("href"));
+  }
+
+  if (window.localStorage.getItem("src") !== null) {
+    iconTheme.setAttribute("src", localStorage.getItem("src"));
+  }
+}
+
+getThemeAndIcon();
 
 // add todo
 inputTodo.addEventListener("keydown", (event) => {
