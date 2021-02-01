@@ -225,8 +225,6 @@ all.addEventListener("click", function () {
   this.classList.toggle("activeFilter");
   completed.classList.remove("activeFilter");
 
-  document.querySelector("#textContent").classList.add("handle");
-
   //filter load
   getTodos();
 });
