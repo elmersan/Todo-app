@@ -67,7 +67,7 @@ inputTodo.addEventListener("keydown", (event) => {
     /********* Local storage **********/
     let todo = {
       _id: uuidv4(),
-      text: inputTodo.value,
+      text: inputTodo.value.trim(),
       state: true,
     };
 
@@ -109,13 +109,6 @@ function getTodos() {
 
 // load local storage
 function loadFromLocalStorage(todos) {
-  // let todos = [],
-  //   dataInLocalStorage = localStorage.getItem(localStorageName);
-
-  // if (dataInLocalStorage !== null) {
-  //   todos = JSON.parse(dataInLocalStorage);
-  // }
-
   contentTodo.innerHTML = "";
 
   todos.forEach((todo, i) => {
@@ -163,9 +156,9 @@ function removeFromLocalStorage(index) {
 function todoTemplate(todo) {
   return `
       <span id="completedTodo" class=${!todo.state ? "active" : ""}></span>
-      <p id="textContent" class=${!todo.state ? "strikethrough" : ""}>${
-    todo.text
-  }</p>
+      <p id="textContent" class=${
+        !todo.state ? "strikethrough handle" : "handle"
+      }>${todo.text}</p>
       <img id="deleteTodo" src="./images/icon-cross.svg" alt="delete-todo" />
     `;
 }
@@ -293,6 +286,7 @@ Sortable.create(contentTodo, {
       return order ? order.split("|") : [];
     },
   },
+  handle: ".handle",
 });
 
 // year

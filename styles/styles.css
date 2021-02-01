@@ -122,6 +122,8 @@ header div:nth-child(2) span,
 
 ul li p {
   font-weight: 400;
+  width: 100%;
+  text-align: center;
 }
 
 .todos ul li img {
