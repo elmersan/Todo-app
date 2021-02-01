@@ -26,10 +26,7 @@ let anio = document.querySelector("#anio");
 
 // Themes
 iconTheme.addEventListener("click", function () {
-  if (
-    window.localStorage.getItem("src") !== null &&
-    window.localStorage.getItem("src") === "./images/icon-sun.svg"
-  ) {
+  if (theme.getAttribute("href") === "./styles/darkMode.css") {
     this.setAttribute("src", "./images/icon-moon.svg");
     theme.setAttribute("href", "./styles/lightMode.css");
 
@@ -107,6 +104,8 @@ function getTodos() {
   loadFromLocalStorage(todos);
 }
 
+getTodos();
+
 // load local storage
 function loadFromLocalStorage(todos) {
   contentTodo.innerHTML = "";
@@ -134,8 +133,6 @@ function loadFromLocalStorage(todos) {
   });
 }
 
-getTodos();
-
 // remove local storage
 function removeFromLocalStorage(index) {
   var todos = [],
@@ -156,9 +153,8 @@ function removeFromLocalStorage(index) {
 function todoTemplate(todo) {
   return `
       <span id="completedTodo" class=${!todo.state ? "active" : ""}></span>
-      <p id="textContent" class=${
-        !todo.state ? "strikethrough handle" : "handle"
-      }>${todo.text}</p>
+      <p id="textContent" class="handle ${!todo.state ? "strikethrough" : ""}">
+      ${todo.text}</p>
       <img id="deleteTodo" src="./images/icon-cross.svg" alt="delete-todo" />
     `;
 }
@@ -167,6 +163,7 @@ function todoTemplate(todo) {
 function completedTodoItem(todo, completedTodo, textContent) {
   completedTodo.classList.toggle("active");
   textContent.classList.toggle("strikethrough");
+  textContent.classList.add("handle");
 
   let todos = [],
     dataInLocalStorage = localStorage.getItem(localStorageName);
@@ -227,6 +224,8 @@ all.addEventListener("click", function () {
   active.classList.remove("activeFilter");
   this.classList.toggle("activeFilter");
   completed.classList.remove("activeFilter");
+
+  document.querySelector("#textContent").classList.add("handle");
 
   //filter load
   getTodos();
